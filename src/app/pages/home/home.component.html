@@ -1,6 +1,10 @@
-<h1>Cartelera</h1>
-<div class="row">
-    <div class="col">
-        
-    </div>
-</div>
+<ng-container *ngIf="movies.length > 0; else notMovies">
+    <div class="row">
+        <div class="col">
+            <app-slide-show [movie]="movies"></app-slide-show>
+        </div>
+    </div> 
+</ng-container>
+<ng-template #notMovies>
+    <h3>Not Movies</h3>
+</ng-template>

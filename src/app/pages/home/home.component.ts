@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MoviesService } from 'src/app/services/movies/movies.service';
 import { Billboard } from 'src/app/interfaces/billboard';
+import { SlideShowComponent } from 'src/app/components/slide-show/slide-show.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SlideShowComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

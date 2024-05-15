@@ -1,1 +1,30 @@
-<p>slide-show works!</p>
+<ng-container>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <ng-container *ngFor="let item of movie">
+                <!-- Slides -->
+                <div class="movie-content swiper-slide">
+                    <img class="movie-img" [src]="loadImageMovie(item.poster_path)" alt="poster movie">
+                    <div class="movie-details">
+                        <h3 class="movie-title">{{item.title}}
+                            <button class="btn btn-outline-light btn-sm">Review</button>
+                        </h3>
+                        <p class="movie-description">{{item.overview}}</p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</ng-container>

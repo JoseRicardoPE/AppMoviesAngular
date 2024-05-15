@@ -6,12 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SlideShowComponent } from './components/slide-show/slide-show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SlideShowComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +17,7 @@ import { SlideShowComponent } from './components/slide-show/slide-show.component
     HttpClientModule,
     ReactiveFormsModule,
     NavbarComponent,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

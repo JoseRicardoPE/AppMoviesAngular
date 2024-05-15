@@ -8,7 +8,7 @@ describe('SlideShowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SlideShowComponent ]
+      imports: [ SlideShowComponent ]
     })
     .compileComponents();
 
