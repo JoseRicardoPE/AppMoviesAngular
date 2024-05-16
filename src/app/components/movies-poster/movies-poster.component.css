@@ -4,7 +4,12 @@
 }
 .movies-details {
     padding: 0 12px;
+    margin-top: 6px;
 }
-.movies-star {
+.movies-details-stars {
     padding: 0;
+}
+.movies-star-icon .star {
+    color: #fdd90c;
+    margin-right: 4px;
 }

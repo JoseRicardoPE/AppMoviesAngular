@@ -24,4 +24,9 @@ export class MoviesPosterComponent implements OnInit {
     return this.moviesService.loadImageMovie(posterPath);
   }
 
+  getStars(voteAverage: number) {
+    const starsCount = Math.floor(voteAverage);
+    return Array(starsCount).fill(0);
+  }
+
 }
