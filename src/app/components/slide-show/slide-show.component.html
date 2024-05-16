@@ -11,20 +11,14 @@
                         <h3 class="movie-title">{{item.title}}
                             <button class="btn btn-outline-light btn-sm">Review</button>
                         </h3>
-                        <p class="movie-description">{{item.overview}}</p>
+                        <p class="movie-description">{{item.overview | slice:0:200}}...</p>
                     </div>
                 </div>
             </ng-container>
         </div>
-        
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-        
+                
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+        <div class="swiper-button swiper-button-prev" (click)="onSlidePrev()"></div>
+        <div class="swiper-button swiper-button-next" (click)="onSlideNext()"></div>
     </div>
 </ng-container>

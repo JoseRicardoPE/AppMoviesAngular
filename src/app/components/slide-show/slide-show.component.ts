@@ -2,8 +2,8 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Billboard } from 'src/app/interfaces/billboard';
 import { Router } from '@angular/router';
-import Swiper from 'swiper';
 import { MoviesService } from 'src/app/services/movies/movies.service';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-slide-show',
@@ -25,30 +25,20 @@ export class SlideShowComponent implements OnInit, AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    const swiper = new Swiper('.swiper', {
-      // Optional parameters
-      direction: 'horizontal',
+    this.mySwiper = new Swiper('.swiper', {
       loop: true,
-    
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
     });
   }
 
   loadImageMovie(posterPath: String): String {
     return this.apiUrlImage + posterPath;
+  }
+
+  onSlidePrev() {
+    this.mySwiper?.slidePrev();
+  }
+
+  onSlideNext() {
+    this.mySwiper?.slideNext();
   }
 }
