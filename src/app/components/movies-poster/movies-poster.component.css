@@ -1,3 +1,10 @@
 .movies-poster {
     color: #fff;
+    cursor: pointer;
+}
+.movies-details {
+    padding: 0 12px;
+}
+.movies-star {
+    padding: 0;
 }

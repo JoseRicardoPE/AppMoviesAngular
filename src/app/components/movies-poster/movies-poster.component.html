@@ -1,6 +1,16 @@
 
-<ng-container *ngFor="let movie of posterMovie">
-    <div class="row movies-poster">
-        <img [src]="loadPosterMovie(movie.poster_path)" alt="{{movie.title}}">
-    </div>
-</ng-container>
+<div class="row">
+    <ng-container *ngFor="let movie of posterMovie">
+        <div class="col-md-3 mb-5 movies-content">
+            <img class="movies-poster img-thumbnail img-fluid" [src]="loadPosterMovie(movie.poster_path)" alt="{{movie.title}}">
+            <div class="row align-items-center movies-details">
+                <div class="col-10 text-white movies-star">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="col-2 text-white movies-average">
+                    {{movie.vote_average}}
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
