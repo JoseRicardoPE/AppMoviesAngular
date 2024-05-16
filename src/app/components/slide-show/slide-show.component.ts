@@ -16,7 +16,6 @@ export class SlideShowComponent implements OnInit, AfterViewInit {
 
   @Input() movie!:Billboard[];
   mySwiper?: Swiper;
-  apiUrlImage = 'https://image.tmdb.org/t/p/w500';
 
   constructor(private router: Router, private movieService: MoviesService) { }
   
@@ -30,8 +29,8 @@ export class SlideShowComponent implements OnInit, AfterViewInit {
     });
   }
 
-  loadImageMovie(posterPath: String): String {
-    return this.apiUrlImage + posterPath;
+  loadImageMovie(posterPath: string): string {
+    return this.movieService.loadImageMovie(posterPath);
   }
 
   onSlidePrev() {

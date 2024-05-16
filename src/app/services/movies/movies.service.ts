@@ -25,4 +25,8 @@ export class MoviesService {
       map( response => response.results)
     );
   }
+
+  loadImageMovie(posterPath: string): string {
+    return this.apiUrlImage + posterPath;
+  }
 }
