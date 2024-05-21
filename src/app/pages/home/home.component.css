@@ -4,6 +4,10 @@
     text-align: center;
 }
 .movies-poster-loading {
-    color: #fff;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dc3545;
+    font-size: 46px;
+    margin-bottom: 32px;
 }

@@ -12,6 +12,6 @@
     <h1 class="movies-poster-title">Estrenos</h1>
     <app-movies-poster [posterMovie]="movies"></app-movies-poster>
     <div *ngIf="isLoading" class="movies-poster-loading">
-        Loading Movies, please wait...
+        <fa-icon [icon]="faSpinner" [spin]="true"></fa-icon>
     </div>
 </div>
