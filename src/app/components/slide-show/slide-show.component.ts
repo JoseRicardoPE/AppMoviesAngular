@@ -14,7 +14,7 @@ import Swiper from 'swiper';
 })
 export class SlideShowComponent implements OnInit, AfterViewInit {
 
-  @Input() movie!:Billboard[];
+  @Input() movies!:Billboard[];
   mySwiper?: Swiper;
 
   constructor(private router: Router, private movieService: MoviesService) { }
@@ -39,5 +39,9 @@ export class SlideShowComponent implements OnInit, AfterViewInit {
 
   onSlideNext() {
     this.mySwiper?.slideNext();
+  }
+
+  onClickMovie(movie: Billboard) {
+    this.router.navigate(['/movie', movie.id]);
   }
 }
