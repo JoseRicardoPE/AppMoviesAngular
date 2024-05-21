@@ -8,7 +8,10 @@
 <ng-template #notMovies>
     <h3>Not Movies</h3>
 </ng-template>
-<div class="movies-poster-content">
+<div class="movies-poster-content" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
     <h1 class="movies-poster-title">Estrenos</h1>
     <app-movies-poster [posterMovie]="movies"></app-movies-poster>
+    <div *ngIf="isLoading" class="movies-poster-loading">
+        Loading Movies, please wait...
+    </div>
 </div>

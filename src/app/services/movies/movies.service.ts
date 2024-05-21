@@ -20,8 +20,8 @@ export class MoviesService {
 
   }
 
-  getMovies(): Observable<Billboard[]> {
-    return this.http.get<MovieObject>(`${this.URL}/movie/now_playing?language=en-US&page=1`, {headers: this.headers}).pipe(
+  getMovies(page: number = 1): Observable<Billboard[]> {
+    return this.http.get<MovieObject>(`${this.URL}/movie/now_playing?language=en-US&page=${page}`, {headers: this.headers}).pipe(
       map( response => response.results)
     );
   }
