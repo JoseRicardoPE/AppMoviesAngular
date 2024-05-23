@@ -6,7 +6,7 @@ import { SlideShowComponent } from 'src/app/components/slide-show/slide-show.com
 import { MoviesPosterComponent } from 'src/app/components/movies-poster/movies-poster.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-home',
@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   isLoading: boolean = false;
   faSpinner = faSpinner;
+  faArrowUp = faArrowUp;
 
   constructor(private movieService: MoviesService, library: FaIconLibrary) {
     library.addIcons(faSpinner);
@@ -47,4 +48,10 @@ export class HomeComponent implements OnInit {
     }, 2000);
   }
 
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
 }

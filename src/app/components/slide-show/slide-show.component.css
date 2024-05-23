@@ -12,6 +12,7 @@
     object-fit: cover;
 }
 .movie-details {
+    width: 100%;
     position: absolute;
     align-self: flex-end;
     color: #dedede;
