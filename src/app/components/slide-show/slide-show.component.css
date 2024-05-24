@@ -1,5 +1,5 @@
 .swiper {
-    margin-top: 16px;
+    margin-top: 1rem;
 }
 .movie-content {
     position: relative;
@@ -8,7 +8,7 @@
 }
 .movie-img {
     width: 100%;
-    height: 400px;
+    height: 25rem;
     object-fit: cover;
 }
 .movie-details {
@@ -16,7 +16,7 @@
     position: absolute;
     align-self: flex-end;
     color: #dedede;
-    padding: 20px 36px;
+    padding: 1.25rem 2.25rem;
     background-color: #16161691;
 }
 .movie-description {
@@ -31,6 +31,6 @@
 }
 .swiper-button::after,
 .swiper-button::before {
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
 }

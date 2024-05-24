@@ -1,15 +1,19 @@
+.movies-content {
+    height: 28.125rem;;
+}
 .movies-poster {
     color: #fff;
     cursor: pointer;
+    height: 100%;
 }
 .movies-details {
-    padding: 0 12px;
-    margin-top: 6px;
+    padding: 0 0.75rem;
+    margin-top: 0.375rem;
 }
 .movies-details-stars {
     padding: 0;
 }
 .movies-star-icon .star {
     color: #fdd90c;
-    margin-right: 4px;
+    margin-right: 0.25rem;
 }

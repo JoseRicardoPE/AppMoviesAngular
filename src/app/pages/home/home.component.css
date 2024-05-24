@@ -1,6 +1,6 @@
 .movies-poster-title {
     color: #dc3545;
-    margin: 38px 0 22px;
+    margin: 2.375rem 0 1.375rem;
     text-align: center;
 }
 .movies-poster-loading {
@@ -8,14 +8,14 @@
     justify-content: center;
     align-items: center;
     color: #dc3545;
-    font-size: 46px;
-    margin-bottom: 32px;
+    font-size: 2.875rem;
+    margin-bottom: 2rem;
 }
 .button-content {
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 0 12px 12px;
+    margin: 0 0.75rem 0.75rem;
 }
 .button-to-top {
     border-radius: 50%;
@@ -27,5 +27,5 @@
 .button-to-top:hover {
     color: #dc3545;
     background-color: transparent;
-    border: 2px solid #dc3545;
+    border: 0.125rem solid #dc3545;
 }
