@@ -11,21 +11,3 @@
     font-size: 2.875rem;
     margin-bottom: 2rem;
 }
-.button-content {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 0 0.75rem 0.75rem;
-}
-.button-to-top {
-    border-radius: 50%;
-    border-color: transparent;
-    background-color: #dc3545;
-    color: #fff;
-    transition: all 0.2s ease;
-}
-.button-to-top:hover {
-    color: #dc3545;
-    background-color: transparent;
-    border: 0.125rem solid #dc3545;
-}
