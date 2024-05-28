@@ -1,3 +1,8 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
 .logo-nav {
     cursor: pointer;
     color: #dc3545;

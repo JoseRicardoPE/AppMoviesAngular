@@ -11,10 +11,10 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search Movie" aria-label="Search">
-          <button class="btn btn-outline-danger" type="submit">Search</button>
-        </form>
+        <div class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search Movie" aria-label="Search" #txtSearch (keyup.enter)="searchMovie(txtSearch.value)">
+          <button class="btn btn-outline-danger" type="submit" (click)="searchMovie(txtSearch.value)">Search</button>
+        </div>
       </div>
     </div>
   </nav>

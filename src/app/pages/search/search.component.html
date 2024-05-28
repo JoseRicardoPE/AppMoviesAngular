@@ -1,1 +1,13 @@
-<p>search works!</p>
+<div class="search-movie-content">
+    <h1 class="search-movie-title">Search Movies</h1>
+    <div class="row">
+        <div class="col">
+            <ng-container *ngIf="movies.length > 0; else notMovies">
+                <app-movies-poster [posterMovie]="movies"></app-movies-poster>
+            </ng-container>
+            <ng-template #notMovies>
+                <h3 class="search-movie-notfound-message">{{notMovie}}</h3>
+            </ng-template>
+        </div>
+    </div>
+</div>

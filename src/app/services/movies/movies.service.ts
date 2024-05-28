@@ -17,16 +17,8 @@ export class MoviesService {
     authorization: `Bearer ${this.apiKey}`
   };
 
-  constructor(private http: HttpClient) {
-
-  }
-
-  getMovies(page: number = 1): Observable<Billboard[]> {
-    return this.http.get<MovieObject>(`${this.URL}/movie/now_playing?language=en-US&page=${page}`, {headers: this.headers}).pipe(
-      map( response => response.results)
-    );
-  }
-
+  constructor(private http: HttpClient) { }
+  
   loadImageMovie(posterPath: string): string {
     if (!posterPath) {
       return this.imageDefault;
@@ -34,4 +26,17 @@ export class MoviesService {
       return this.apiUrlImage + posterPath;
     }
   }
+  
+  getMovies(page: number = 1): Observable<Billboard[]> {
+    return this.http.get<MovieObject>(`${this.URL}/movie/now_playing?language=en-US&page=${page}`, {headers: this.headers}).pipe(
+      map( response => response.results)
+    );
+  }
+
+  searchMovie(text: string): Observable<Billboard[]> {
+    return this.http.get<MovieObject>(`${this.URL}/search/movie?query=${text}&language=en-US&page=1`, {headers: this.headers}).pipe(
+      map( response => response.results)
+    )
+  }
+
 }
