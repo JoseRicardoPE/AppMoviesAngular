@@ -27,22 +27,27 @@
                     </div>
                 </div>
             </div>
-            <ng-container *ngIf="director.length > 0 || writer.length > 0">
-                <div class="movie-details-data-content">
-                    <div class="movie-details-data-crew">
+            <div class="movie-details-data-content">
+                <div class="movie-details-data-crew">
+                    <span class="movie-details-data-job">Director:</span>
+                    <ng-container *ngIf="director.length > 0">
                         <ng-container *ngFor="let director of director">
-                            <span class="movie-details-data-job">Director:</span>
                             <span class="movie-details-data-name">{{director.name}}</span>
                         </ng-container>
-                    </div>
-                    <div class="movie-details-data-crew">
+                    </ng-container>
+                </div>
+                <div class="movie-details-data-crew">
+                    <span class="movie-details-data-job">Writer:</span>
+                    <ng-container *ngIf="writer.length > 0; else noData">
                         <ng-container *ngFor="let writer of writer">
-                            <span class="movie-details-data-job">Writer:</span>
                             <span class="movie-details-data-name">{{writer.name}}</span>
                         </ng-container>
-                    </div>
+                    </ng-container>
                 </div>
-            </ng-container>
+                <ng-template #noData>
+                    <span class="movie-details-data-name">--</span>
+                </ng-template>
+            </div>
             <div class="movie-details-button">
                 <button class="button btn btn-outline-danger float-right" (click)="buttonReturn()">
                     Back
