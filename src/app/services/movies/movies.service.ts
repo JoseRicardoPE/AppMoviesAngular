@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { Billboard } from 'src/app/interfaces/billboard';
 import { MovieObject } from 'src/app/interfaces/movie-object';
+import { MovieDetails } from 'src/app/interfaces/movie-details';
+import { MovieCredits, Cast, Crew } from 'src/app/interfaces/movie-credits';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +39,23 @@ export class MoviesService {
     return this.http.get<MovieObject>(`${this.URL}/search/movie?query=${text}&language=en-US&page=1`, {headers: this.headers}).pipe(
       map( response => response.results)
     )
+  }
+
+  getMovieId(id: string) {
+    return this.http.get<MovieDetails>(`${this.URL}/movie/${id}?language=en-US`, {headers: this.headers}).pipe(
+      catchError( err => of(null) )
+    );
+  }
+
+  getMovieCredits(id: string): Observable<Cast[] | null> {
+    return this.http.get<MovieCredits>(`${this.URL}/movie/${id}/credits?language=en-US`, {headers: this.headers}).pipe(
+      map( response => response.cast),
+      catchError( err => of(null) ),
+    );
+  }
+
+  getMovieCrew(id: number): Observable<MovieCredits> {
+    return this.http.get<MovieCredits>(`${this.URL}/movie/${id}/credits?language=en-US`, {headers: this.headers})
   }
 
 }

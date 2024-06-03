@@ -1,0 +1,43 @@
+.movie-details {
+    display: flex;
+    margin-top: 6rem;
+}
+.movie-details-poster {
+    flex: 1 1 50%;
+}
+.movie-details-content {
+    flex: 1 1 50%;
+}
+.movie-details-subtitle {
+    color: #fff;
+}
+.movie-details-votes {
+    display: flex;
+    color: #fff;
+}
+.movie-details-votes-stars {
+    margin-right: 0.75rem;
+}
+.movie-details-votes-stars i {
+    margin-right: 0.25rem;
+}
+.movie-details-overview {
+    margin-top: 3rem;
+}
+.movie-details-overview-content {
+    color: #fff;
+}
+.movie-details-data-content {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+}
+.movie-details-data-crew {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 33.3%;
+}
+.movie-details-button {
+    margin-top: 2rem;
+    text-align: right;
+}
