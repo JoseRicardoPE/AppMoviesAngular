@@ -1,1 +1,30 @@
-<p>cast-slide works!</p>
+<!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" *ngFor="let actor of cast">
+            <div class="swiper-slide-image-actor">
+                <ng-container *ngIf="actor.profile_path; else notImage">
+                    <img [src]="loadImageMovie(actor.profile_path)" alt="photo_actor_movie">
+                </ng-container>
+                <ng-template #notImage>
+                    <img class="swiper-slide-image-not-found" src="../../../assets/images/default-poster.png" alt="photo_actor_movie">
+                </ng-template>
+            </div>
+            <div class="swiper-slide-actor-name">
+                <span>{{actor.name}}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- If we need pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button swiper-button-prev" (click)="onSlidePrev()"></div>
+    <div class="swiper-button swiper-button-next" (click)="onSlideNext()"></div>
+  
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+  </div>

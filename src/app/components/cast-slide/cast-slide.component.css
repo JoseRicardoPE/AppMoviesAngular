@@ -1,0 +1,17 @@
+.swiper-slide {
+    width: 150px !important;
+    background-color: #fff;
+    height: auto;
+}
+.swiper-slide img {
+    min-height: 225.3px;
+    height: 100%;
+    width: 100%;
+}
+.swiper-slide-actor-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 8px;
+}

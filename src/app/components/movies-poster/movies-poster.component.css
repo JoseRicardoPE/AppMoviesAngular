@@ -1,3 +1,6 @@
+/* src/app/otro-componente/otro-componente.component.scss */
+@import '../../../styles/shared-styles.css';
+
 .movies-content {
     height: 28.125rem;;
 }
@@ -12,8 +15,4 @@
 }
 .movies-details-stars {
     padding: 0;
-}
-.movies-star-icon .star {
-    color: #fdd90c;
-    margin-right: 0.25rem;
 }

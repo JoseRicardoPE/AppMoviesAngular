@@ -5,18 +5,19 @@ import { combineLatest } from 'rxjs';
 import { MoviesService } from 'src/app/services/movies/movies.service';
 import { MovieDetails } from 'src/app/interfaces/movie-details';
 import { MovieCredits, Cast, Crew } from 'src/app/interfaces/movie-credits';
+import { CastSlideComponent } from 'src/app/components/cast-slide/cast-slide.component';
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CastSlideComponent],
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
 
   movie?: MovieDetails;
-  casting: Cast[] = [];
+  cast: Cast[] = [];
   crew: Crew[] = [];
   director: Crew[] = [];
   writer: Crew[] = [];
@@ -32,13 +33,13 @@ export class MovieComponent implements OnInit {
     combineLatest([
       this.movieService.getMovieId(id),
       this.movieService.getMovieCredits(id),
-    ]).subscribe( ([movie, casting]) => {
-      if (movie === null || casting === null) {
+    ]).subscribe( ([movie, cast]) => {
+      if (movie === null || cast === null) {
         console.error('Error: Movie not found...');
         return;
       }
       this.movie = movie;
-      this.casting = casting;
+      this.cast = cast;
       // console.log(movie);
     });
 

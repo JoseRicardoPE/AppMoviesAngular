@@ -5,19 +5,21 @@
         </div>
         <div class="movie-details-content">
             <div>
-                <h3 class="movie-details-subtitle">{{movie.title}}</h3>
-                <div class="movie-details-votes">
-                     <div class="movie-details-votes-stars">
-                        <ng-container *ngIf="movie.vote_average">
-                            <div class="movie-details-votes-icon">
-                                <ng-container *ngFor="let star of getStars(movie.vote_average)">
-                                    <i class="fas fa-star star"></i>
-                                </ng-container>
-                            </div>
-                        </ng-container>
-                    </div>
-                    <div class="movie-details-votes-average">
-                        <span>{{ movie.vote_average | number:'1.1-2' }}</span>
+                <div class="movie-details-header">
+                    <h3 class="movie-details-subtitle">{{movie.title}}</h3>
+                    <div class="movie-details-votes">
+                         <div class="movie-details-votes-stars">
+                            <ng-container *ngIf="movie.vote_average">
+                                <div class="movie-details-votes-icon">
+                                    <ng-container *ngFor="let star of getStars(movie.vote_average)">
+                                        <i class="fas fa-star icon-star"></i>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="movie-details-votes-average">
+                            <span>{{ movie.vote_average | number:'1.1-2' }}</span>
+                        </div>
                     </div>
                 </div>
                 <div class="movie-details-overview">
@@ -53,6 +55,14 @@
                     Back
                 </button>
             </div>
+        </div>
+    </ng-container>
+</div>
+<div class="row my-5">
+    <h3 class="">Casting</h3>
+    <ng-container *ngIf="cast.length > 0">
+        <div class="col movie-details-content-cast">
+            <app-cast-slide [cast]="cast"></app-cast-slide>
         </div>
     </ng-container>
 </div>
