@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Tráiler</h1>
+<div mat-dialog-content>
+    <ng-container *ngIf="data.trailerUrl; else noTrailer">
+        <iframe width="660" height="415" [src]="data.trailerUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
+    </ng-container>
+    <ng-template #noTrailer>
+        <p>No hay tráiler disponible.</p>
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Cerrar</button>
+</div>

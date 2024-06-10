@@ -1,4 +1,19 @@
+.subtitle {
+    color: #fff;
+}
 .icon-star {
     color: #fdd90c;
     margin-right: 0.25rem;
+}
+.swiper-button {
+    color: #fff;
+    transition: background-color 0.2s ease-in;
+}
+.swiper-button:hover {
+    background-color: #16161691;
+}
+.swiper-button::after,
+.swiper-button::before {
+    font-size: 1.625rem;
+    font-weight: 700;
 }

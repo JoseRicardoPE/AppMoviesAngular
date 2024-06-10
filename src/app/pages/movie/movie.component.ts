@@ -6,11 +6,12 @@ import { MoviesService } from 'src/app/services/movies/movies.service';
 import { MovieDetails } from 'src/app/interfaces/movie-details';
 import { MovieCredits, Cast, Crew } from 'src/app/interfaces/movie-credits';
 import { CastSlideComponent } from 'src/app/components/cast-slide/cast-slide.component';
+import { MovieTrilerComponent } from 'src/app/components/movie-triler/movie-triler.component';
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [CommonModule, CastSlideComponent],
+  imports: [CommonModule, CastSlideComponent, MovieTrilerComponent],
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })

@@ -55,7 +55,11 @@ export class MoviesService {
   }
 
   getMovieCrew(id: number): Observable<MovieCredits> {
-    return this.http.get<MovieCredits>(`${this.URL}/movie/${id}/credits?language=en-US`, {headers: this.headers})
+    return this.http.get<MovieCredits>(`${this.URL}/movie/${id}/credits?language=en-US`, {headers: this.headers});
+  }
+
+  getMovieTrailer(id: number): Observable<any> {
+    return this.http.get<MovieDetails>(`${this.URL}/movie/${id}/videos?language=en-US`, {headers: this.headers});
   }
 
 }

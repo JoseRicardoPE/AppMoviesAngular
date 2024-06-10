@@ -1,3 +1,5 @@
+@import '../../../styles/shared-styles.css';
+
 .swiper-slide {
     width: 150px !important;
     background-color: #fff;
