@@ -16,6 +16,7 @@
 }
 .movie-details-genres {
     display: flex;
+    flex-wrap: wrap;
     color: #fff;
 }
 .movie-details-list {
@@ -31,11 +32,11 @@
 .movie-details-item:first-child {
     position: relative;
     list-style: disc;
+    margin-right: 0.625rem;
 }
 .movie-details-item:first-child::after {
     content: ',';
     position: absolute;
-    right: -0.625rem;
 }
 .movie-details-item:not(:last-child):not(:first-child)::after {
     content: ',';
