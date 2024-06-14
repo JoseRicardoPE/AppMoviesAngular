@@ -5,20 +5,13 @@
             <figure class="movies-content-poster">
                 <img class="movies-poster img-thumbnail img-fluid" [src]="loadPosterMovie(movie.poster_path)" alt="{{movie.title}}" (click)="onClickMovie(movie)">
             </figure>
-            <div class="row align-items-center movies-details">
-                <div class="col-10 text-white movies-detail-stars">
-                    <ng-container *ngIf="movie.vote_average">
-                        <div class="movies-star-icon">
-                            <ng-container *ngFor="let star of getStars(movie.vote_average)">
-                                <i class="fas fa-star icon-star"></i>
-                            </ng-container>
-                        </div>
+            <ng-container *ngIf="movie.vote_average">
+                <div class="movies-content-stars">
+                    <ng-container *ngFor="let star of getStars(movie.vote_average)">
+                        <i class="fas fa-star movies-star"></i>
                     </ng-container>
                 </div>
-                <div class="col-2 text-white movies-average">
-                    <span>{{ movie.vote_average | number:'1.1-2' }}</span>
-                </div>
-            </div>
+            </ng-container>
         </div>
     </ng-container>
 </div>

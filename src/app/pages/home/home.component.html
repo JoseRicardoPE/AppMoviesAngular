@@ -9,7 +9,7 @@
     <h3>Not Movies</h3>
 </ng-template>
 <div class="movies-poster-content" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
-    <h1 class="movies-poster-title">Estrenos</h1>
+    <h1 class="movies-poster-title">Premieres</h1>
     <app-movies-poster [posterMovie]="movies"></app-movies-poster>
     <div *ngIf="isLoading" class="movies-poster-loading">
         <fa-icon [icon]="faSpinner" [spin]="true"></fa-icon>
