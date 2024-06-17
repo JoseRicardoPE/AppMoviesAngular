@@ -1,17 +1,18 @@
 <ng-container>
     <!-- Slider main container -->
-    <div class="swiper">
+    <div class="swiper-container" #swiperContainer>
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <ng-container *ngFor="let movie of movies">
                 <!-- Slides -->
-                <div class="movie-content swiper-slide">
-                    <img class="movie-img" [src]="loadImageMovie(movie.poster_path)" alt="poster movie">
-                    <div class="movie-details">
-                        <h3 class="movie-title">{{movie.title}}
-                            <button class="btn btn-outline-light btn-sm" (click)="onClickMovie(movie)">Review</button>
-                        </h3>
-                        <p class="movie-description">{{movie.overview | slice:0:200}}...</p>
+                <div class="swiper-movie-content swiper-slide">
+                    <img class="swiper-movie-img" [src]="loadImageMovie(movie.poster_path)" alt="poster movie">
+                    <div class="swiper-movie-details">
+                        <div class="swiper-movie-header">
+                            <h3 class="swiper-movie-title">{{movie.title}}</h3>
+                            <button class="btn btn-outline-light btn-sm swiper-movie-button" (click)="onClickMovie(movie)">Review</button>
+                        </div>
+                        <p class="swiper-movie-description">{{movie.overview | slice:0:180}}...</p>
                     </div>
                 </div>
             </ng-container>
@@ -20,5 +21,8 @@
         <!-- If we need navigation buttons -->
         <div class="swiper-button swiper-button-prev" (click)="onSlidePrev()"></div>
         <div class="swiper-button swiper-button-next" (click)="onSlideNext()"></div>
+
+         <!-- If we need scrollbar -->
+         <div class="swiper-scrollbar swiper-scrollbar-horizontal"></div>
     </div>
 </ng-container>

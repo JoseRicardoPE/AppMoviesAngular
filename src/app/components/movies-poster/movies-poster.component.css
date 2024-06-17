@@ -12,6 +12,7 @@
     margin-bottom: 0.375rem;
 }
 .movies-poster {
+    display: block;
     color: #fff;
     cursor: pointer;
     height: 100%;

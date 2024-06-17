@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Billboard } from 'src/app/interfaces/billboard';
 import { Router } from '@angular/router';
@@ -14,6 +14,8 @@ import Swiper from 'swiper';
 })
 export class SlideShowComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('swiperContainer') swiperContainer!: any; // ViewChild para obtener referencia al contenedor Swiper
+
   @Input() movies!:Billboard[];
   mySwiper?: Swiper;
 
@@ -24,8 +26,14 @@ export class SlideShowComponent implements OnInit, AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    this.mySwiper = new Swiper('.swiper', {
+    this.mySwiper = new Swiper(this.swiperContainer.nativeElement, {
+      direction: 'horizontal', // Dirección del deslizamiento
       loop: true,
+      scrollbar: {
+        el: 'swiper-scrollbar',
+        hide: false,
+        draggable: true, // Permite arrastrar el scrollbar
+      }
     });
   }
 

@@ -1,26 +1,41 @@
 @import '../../../styles/shared-styles.css';
-.swiper {
+.swiper-container {
+    position: relative;
     margin-top: 6rem;
+    overflow: hidden;
 }
-.movie-content {
+.swiper-movie-content {
     position: relative;
     display: flex;
     width: 100%;
+    height: 22.1875rem;
+    overflow: hidden;
 }
-.movie-img {
+.swiper-movie-img {
+    display: block;
     width: 100%;
-    height: 25rem;
+    height: 100%;
     object-fit: cover;
 }
-.movie-details {
+.swiper-movie-details {
     width: 100%;
     position: absolute;
     align-self: flex-end;
     color: #dedede;
     padding: 1.25rem 2.25rem;
     background-color: #16161691;
+    overflow: hidden;
 }
-.movie-description {
+.swiper-movie-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.3125rem;
+}
+.swiper-movie-title {
+    font-size: 1.625rem;
+    margin-right: 1rem;
+}
+.swiper-movie-description {
     margin-bottom: 0;
 }
 .swiper-button {
@@ -34,4 +49,39 @@
 .swiper-button::before {
     font-size: 1.625rem;
     font-weight: 700;
+}
+.swiper-scrollbar {
+    display: none;
+}
+
+/*[Responsive]*/
+@media (max-width: 992px) {
+    .swiper-movie-title {
+        font-size: 1.375rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .swiper-movie-details {
+        padding: 0.625rem 1rem;
+    }
+    .swiper-movie-header {
+        margin-bottom: 0;
+    }
+    .swiper-button {
+        display: none;
+    }
+    /* Estilos para el scrollbar */
+    .swiper-scrollbar {
+        display: block;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        width: 100%;
+        height: 6px; /* Altura del scrollbar horizontal */
+        background-color: rgba(222, 226, 230, 0.7);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+  
 }
