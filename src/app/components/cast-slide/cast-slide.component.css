@@ -1,12 +1,13 @@
 @import '../../../styles/shared-styles.css';
 
 .swiper-slide {
-    width: 9.375rem !important;
+    width: 7.5rem !important;
     background-color: #fff;
-    height: auto;
+    min-height: 15.625rem;
+    height: 100%;
 }
 .swiper-slide-image-actor {
-    min-height: 13.75rem;
+    min-height: 11.25rem;
 }
 .swiper-slide img {
     height: 100%;
@@ -16,6 +17,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
     text-align: center;
     padding: 0.625rem 0.5rem;
+}
+.swiper-slide-actor-name span {
+    font-size: 1rem;
 }

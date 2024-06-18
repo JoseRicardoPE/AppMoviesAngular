@@ -25,8 +25,8 @@
     align-items: center;
 }
 
-/*[Responsive] <= 470px*/
-@media (max-width: 470px) {
+/*[Responsive]*/
+@media (max-width: 29.375rem) { /** <= 470px **/
     .movies-content {
         width: auto;
         flex: initial;
