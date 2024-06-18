@@ -1,12 +1,14 @@
 @import '../../../styles/shared-styles.css';
 
 .swiper-slide {
-    width: 150px !important;
+    width: 9.375rem !important;
     background-color: #fff;
     height: auto;
 }
+.swiper-slide-image-actor {
+    min-height: 13.75rem;
+}
 .swiper-slide img {
-    min-height: 225.3px;
     height: 100%;
     width: 100%;
 }
@@ -15,5 +17,5 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px 8px;
+    padding: 0.625rem 0.5rem;
 }
