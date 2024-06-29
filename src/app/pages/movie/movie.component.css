@@ -103,3 +103,11 @@
         margin-top: 2rem;
     }
 }
+@media (max-width: 30rem) {
+    .movie-details-data-content {
+        flex-direction: column;
+    }
+    .movie-details-data-crew--writer {
+        margin-top: 1rem;
+    }
+}

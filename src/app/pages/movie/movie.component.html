@@ -33,7 +33,7 @@
             </div>
             
             <div class="movie-details-data-content">
-                <div class="movie-details-data-crew">
+                <div class="movie-details-data-crew movie-details-data-crew--director">
                     <span class="movie-details-data-job">Director:</span>
                     <ng-container *ngIf="director.length > 0">
                         <ng-container *ngFor="let director of director">
@@ -41,7 +41,7 @@
                         </ng-container>
                     </ng-container>
                 </div>
-                <div class="movie-details-data-crew">
+                <div class="movie-details-data-crew movie-details-data-crew--writer">
                     <span class="movie-details-data-job">Writer:</span>
                     <ng-container *ngIf="writer.length > 0; else noData">
                         <ng-container *ngFor="let writer of writer">
